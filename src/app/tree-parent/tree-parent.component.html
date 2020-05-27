@@ -1,0 +1,16 @@
+<h2>Tree data visualized </h2>
+
+<div *ngIf="treeNode">
+  <cdk-virtual-scroll-viewport 
+      [style.height.px]="500"
+      style="width: 900px; margin-top: 10px;"
+      minBufferPx="200"
+      maxBufferPx="350"
+      itemSize="20">
+    
+    <div *cdkVirtualFor="let ch of flatTree; templateCacheSize: 20">
+      <app-tree-child [node]="ch"></app-tree-child>
+    </div>
+
+  </cdk-virtual-scroll-viewport>
+</div>
